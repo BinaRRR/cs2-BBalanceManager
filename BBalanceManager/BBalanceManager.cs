@@ -42,9 +42,8 @@ public class BBalanceManager : BasePlugin, IPluginConfig<SettingsConfig>
     }
 
     [GameEventHandler]
-    public HookResult OnRoundStart(EventRoundStart @event, GameEventInfo info)
+    public HookResult OnRoundPreStart(EventRoundPrestart @event, GameEventInfo info)
     {
-        Console.WriteLine("works");
         List<CCSPlayerController> CTplayers = new();
         List<CCSPlayerController> TTplayers = new();
         foreach (CCSPlayerController player in Utilities.GetPlayers())
